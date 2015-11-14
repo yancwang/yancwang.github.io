@@ -1672,7 +1672,7 @@
 		}
 
 			#nav a:hover {
-				color: #D32F2F !important;
+				color: #FFFFFF !important;
 			}
 
 			#nav a.active:before {
@@ -1684,7 +1684,7 @@
 				margin-left: -0.75em;
 				border-left: solid 0.75em transparent;
 				border-right: solid 0.75em transparent;
-				border-top: solid 0.6em #D32F2F;
+				border-top: solid 0.6em #FFFFFF;
 			}
 
 /* Articles */
