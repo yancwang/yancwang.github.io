@@ -1671,7 +1671,7 @@
 			outline: 0;
 		}
 
-			#nav a:hover {
+			#nav a.active:hover {
 				color: #FFFFFF !important;
 			}
 
