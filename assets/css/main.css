@@ -1678,14 +1678,14 @@
 			#nav a.active:before {
 				content: '';
 				display: block;
-				color:#212121;
+				color:#FFFFFF;
 				position: absolute;
 				bottom: -0.6em;
 				left: 50%;
 				margin-left: -0.75em;
 				border-left: solid 0.75em transparent;
 				border-right: solid 0.75em transparent;
-				border-top: solid 0.6em #FFFFFF;
+				border-top: solid 0.6em #212121;
 			}
 
 /* Articles */
