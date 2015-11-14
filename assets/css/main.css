@@ -1645,13 +1645,6 @@
 /* Nav */
 
 	#nav {
-		background-color: #D32F2F;
-		text-align: center;
-		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
-		z-index: 10000;
 		cursor: default;
 	}
 
@@ -1690,21 +1683,14 @@
 				transition: color 0.25s ease-in-out;
 			}
 
-		    #nav a.active:hover {
-			    color: #FFFFFF !important;
-		    }
- 
-		    #nav a.active:before {
-			    content: '';
-			    display: block;
-				position: absolute;
-				bottom: -0.6em;
-				left: 50%;
-				margin-left: -0.75em;
-				border-left: solid 0.75em transparent;
-				border-right: solid 0.75em transparent;
-				border-top: solid 0.6em #FFFFFF;
-			}
+		#nav > ul > li.active > a:before, #nav > ul > li:hover > a:before {
+			background: #ED786A;
+			color: #fff;
+		}
+
+		#nav > ul > li.active > a > span, #nav > ul > li:hover > a > span {
+			color: #ED786A;
+		}
 
 /* Articles */
 
