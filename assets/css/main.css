@@ -1678,6 +1678,7 @@
 			#nav a.active:before {
 				content: '';
 				display: block;
+				color:#D32F2F;
 				position: absolute;
 				bottom: -0.6em;
 				left: 50%;
