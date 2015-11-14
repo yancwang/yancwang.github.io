@@ -1666,13 +1666,13 @@
 		#nav a {
 			position: relative;
 			display: block;
-			color: #D32F2F;
+			color: #212121;
 			text-decoration: none;
 			outline: 0;
 		}
 
 			#nav a:hover {
-				color: #FFFFFF !important;
+				color: #212121 !important;
 			}
 
 			#nav a.active:before {
