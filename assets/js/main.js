@@ -1,19 +1,24 @@
 /*
-	Photon by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function($) {
 
-	skel.breakpoints({
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1140px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 320px)'
-	});
+	skel
+		.breakpoints({
+			desktop: '(min-width: 737px)',
+			tablet: '(min-width: 737px) and (max-width: 1200px)',
+			mobile: '(max-width: 736px)'
+		})
+		.viewport({
+			breakpoints: {
+				tablet: {
+					width: 1080
+				}
+			}
+		});
 
 	$(function() {
 
@@ -24,9 +29,7 @@
 			$body.addClass('is-loading');
 
 			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 250);
+				$body.removeClass('is-loading');
 			});
 
 		// Fix: Placeholder polyfill.
@@ -40,8 +43,21 @@
 				);
 			});
 
+		// CSS polyfills (IE<9).
+			if (skel.vars.IEVersion < 9)
+				$(':last-child').addClass('last-child');
+
 		// Scrolly.
-			$('.scrolly').scrolly();
+			$window.load(function() {
+
+				var x = parseInt($('.wrapper').first().css('padding-top')) - 15;
+
+				$('#nav a, .scrolly').scrolly({
+					speed: 1000,
+					offset: x
+				});
+
+			});
 
 	});
 
