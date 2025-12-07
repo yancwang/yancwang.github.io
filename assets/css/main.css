@@ -568,6 +568,21 @@ article {
 /* Education section spacing */
 #education .box .image {
 	margin-top: 1.5rem;
+}
+
+/* Activity section spacing */
+#activity .box {
+	min-height: auto;
+	height: auto;
+	padding: 2rem 1.5rem;
+}
+
+#activity .box .image {
+	margin-bottom: 1rem;
+}
+
+#activity .box h3 {
+	margin-bottom: 0.5rem;
 }	
 
 
@@ -593,9 +608,33 @@ article {
 }
 
 @media screen and (max-width: 768px) {
+	#nav {
+		height: auto;
+		padding: 0.5rem 0;
+	}
+	
+	#nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0 0.5rem;
+	}
+	
+	#nav li {
+		height: auto;
+	}
+	
 	#nav a {
-		padding: 0 1rem;
-		font-size: 0.85rem;
+		padding: 0.5rem 0.75rem;
+		font-size: 0.75rem;
+		height: auto;
+		line-height: 1.5;
+		letter-spacing: 0.5px;
+	}
+	
+	.dropdown-menu {
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	
 	.box {
@@ -611,6 +650,10 @@ article {
 	.image.profile-thumb img {
 		width: 100px;
 		height: 100px;
+	}
+	
+	#home {
+		padding-top: 6rem;
 	}
 }
 
