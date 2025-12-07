@@ -390,6 +390,142 @@ article {
 #nav.scrolled a {
 	height: 60px;
 	line-height: 60px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+	position: relative;
+}
+
+.dropdown-menu {
+	display: none !important;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 10px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	min-width: 200px;
+	padding: 0.5rem 0;
+	z-index: 10001;
+}
+
+.dropdown-menu.show {
+	display: block !important;
+	animation: fadeInDown 0.3s ease;
+}
+
+.dropdown-menu li {
+	display: block;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+
+.dropdown-menu a {
+	display: block;
+	padding: 0.75rem 1.5rem;
+	height: auto;
+	line-height: 1.5;
+	font-size: 0.9rem;
+	text-transform: none;
+	letter-spacing: 0.5px;
+	color: #1a237e;
+	text-shadow: none;
+	transition: all 0.3s ease;
+}
+
+.dropdown-menu a::before {
+	display: none;
+}
+
+.dropdown-menu a:hover {
+	background: rgba(100, 181, 246, 0.2);
+	color: #1565c0;
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.dropdown > a {
+	cursor: pointer;
+}
+
+/* Contact Box - Smaller Square Style */
+.contact-box {
+	width: 150px;
+	height: 150px;
+	background: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 15px;
+	box-shadow: 
+		0 8px 32px 0 rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+	text-align: center;
+	padding: 1.5rem;
+	margin: 1rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: top;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.contact-box::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+	transition: left 0.5s ease;
+}
+
+.contact-box:hover::before {
+	left: 100%;
+}
+
+.contact-box:hover {
+	transform: translateY(-10px) scale(1.05);
+	border-color: rgba(255, 255, 255, 0.6);
+	box-shadow: 
+		0 15px 45px 0 rgba(0, 0, 0, 0.12),
+		inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+		0 0 30px rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.35);
+}
+
+.contact-box h3 {
+	color: #1a237e;
+	font-size: 1rem;
+	line-height: 1.4;
+	font-family: 'JetBrains Mono', monospace;
+	text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+	margin: 0;
+}
+
+.contact-box h3 strong {
+	color: #1565c0;
+	text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+	font-weight: 700;
 }	
 
 

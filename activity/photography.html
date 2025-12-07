@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+    Photography page by Yanchen
+-->
+
+<html>
+	<head>
+		<title>Photography | Yanchen Wang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Yanchen Wang - Photography Portfolio" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body>
+
+		<!--Nav-->
+			<nav id="nav">
+				<ul>
+					<li><a href="../index.html#home"><strong>Home</strong></a></li>
+					<li><a href="../index.html#education"><strong>Education</strong></a></li>
+					<li><a href="../index.html#work"><strong>Work</strong></a></li>
+					<li class="dropdown">
+						<a href="../index.html#activity"><strong>Activity</strong></a>
+						<ul class="dropdown-menu">
+							<li><a href="photography.html">Photography</a></li>
+							<li><a href="../index.html#activity">Travel</a></li>
+						</ul>
+					</li>
+					<li><a href="../index.html#contact"><strong>Contact</strong></a></li>
+				</ul>
+			</nav>
+
+		<!--Photography Content-->
+			<article id="home">
+				<div class="container">
+					<h1>Photography</h1>
+					<p>Welcome to my photography portfolio. Here I share my passion for capturing moments and telling stories through images.</p>
+				</div>
+			</article>
+
+			<article id="education">
+				<div class="container">
+					<h2>Gallery</h2>
+					<div class="row">
+						<section class="box">
+							<a href="landscape.html" style="text-decoration: none; color: inherit; display: block;">
+								<h3><strong>Landscape</strong></h3>
+								<p>Nature and scenic photography</p>
+							</a>
+						</section>
+						<section class="box">
+							<h3><strong>Portrait</strong></h3>
+							<p>People and lifestyle photography</p>
+						</section>
+						<section class="box">
+							<h3><strong>Street</strong></h3>
+							<p>Urban and candid photography</p>
+						</section>
+					</div>
+				</div>
+			</article>
+
+		<script>
+			// Dropdown menu toggle
+			document.addEventListener('DOMContentLoaded', function() {
+				const dropdown = document.querySelector('.dropdown');
+				const dropdownMenu = document.querySelector('.dropdown-menu');
+				const dropdownLink = dropdown.querySelector('a');
+				
+				dropdownLink.addEventListener('click', function(e) {
+					e.preventDefault();
+					dropdownMenu.classList.toggle('show');
+				});
+				
+				// Close dropdown when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!dropdown.contains(e.target)) {
+						dropdownMenu.classList.remove('show');
+					}
+				});
+			});
+		</script>
+
+	</body>
+</html>

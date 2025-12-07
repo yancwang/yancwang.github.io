@@ -19,7 +19,13 @@
 					<li><a href="#home"><strong>Home</strong></a></li>
 					<li><a href="#education"><strong>Education</strong></a></li>
 					<li><a href="#work"><strong>Work</strong></a></li>
-					<li><a href="#activity"><strong>Activity</strong></a></li>
+					<li class="dropdown">
+						<a href="#activity"><strong>Activity</strong></a>
+						<ul class="dropdown-menu">
+							<li><a href="activity/photography.html">Photography</a></li>
+							<li><a href="#activity">Travel</a></li>
+						</ul>
+					</li>
 					<li><a href="#contact"><strong>Contact</strong></a></li>
 				</ul>
 			</nav>
@@ -60,24 +66,67 @@
 		<article id="work">
 			<h2>Work</h2>
 			<div class="container">
-				<p>Work experience content coming soon...</p>
+				<div class="row">
+					<section class="box">
+						<h3><strong>New Oriental</strong></h3>
+					</section>
+					<section class="box">
+						<h3><strong>Xcerra</strong></h3>
+					</section>
+					<section class="box">
+						<h3><strong>Amazon</strong></h3>
+					</section>
+				</div>
 			</div>
 		</article>
 		
 		<article id="activity">
 			<h2>Activity</h2>
 			<div class="container">
-				<p>Activities content coming soon...</p>
+				<div class="row">
+					<section class="box">
+						<a href="activity/photography.html" style="text-decoration: none; color: inherit;">
+							<h3><strong>Photography</strong></h3>
+						</a>
+					</section>
+					<section class="box">
+						<h3><strong>Travel</strong></h3>
+					</section>
+				</div>
 			</div>
 		</article>
 
 		<article id="contact">
 			<h2>Contact</h2>
 			<div class="container">
-				<p>Contact information coming soon...</p>
+				<div class="row">
+					<section class="contact-box">
+						<h3><strong>LinkedIn</strong></h3>
+					</section>
+				</div>
 			</div>
 		</article>
-		
+
+		<script>
+			// Dropdown menu toggle
+			document.addEventListener('DOMContentLoaded', function() {
+				const dropdown = document.querySelector('.dropdown');
+				const dropdownMenu = document.querySelector('.dropdown-menu');
+				const dropdownLink = dropdown.querySelector('a');
+				
+				dropdownLink.addEventListener('click', function(e) {
+					e.preventDefault();
+					dropdownMenu.classList.toggle('show');
+				});
+				
+				// Close dropdown when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!dropdown.contains(e.target)) {
+						dropdownMenu.classList.remove('show');
+					}
+				});
+			});
+		</script>
 
 	</body>
 
