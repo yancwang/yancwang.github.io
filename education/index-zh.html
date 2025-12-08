@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+		<title>教育背景 | 王沿辰</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="王沿辰 - 教育背景" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Floating Buttons -->
+		<div class="floating-buttons">
+			<button class="back-to-top" id="backToTop" aria-label="返回顶部">
+				<span>顶部</span>
+			</button>
+			<div class="lang-switch">
+				<a href="index.html" class="lang-btn">EN</a>
+				<a href="index-zh.html" class="lang-btn active">CN</a>
+			</div>
+		</div>
+
+		<!--Nav-->
+		<nav id="nav">
+			<ul>
+				<li><a href="../index-zh.html#home"><strong>首页</strong></a></li>
+				<li><a href="../index-zh.html#education"><strong>教育</strong></a></li>
+				<li><a href="../index-zh.html#work"><strong>工作</strong></a></li>
+				<li><a href="../index-zh.html#activity"><strong>活动</strong></a></li>
+				<li><a href="../index-zh.html#contact"><strong>联系</strong></a></li>
+			</ul>
+		</nav>
+
+		<!--Education Content-->
+		<article id="home">
+			<div class="container">
+				<h1>教育背景</h1>
+				<p>我的学术历程和教育背景。</p>
+			</div>
+		</article>
+
+		<article id="northeastern">
+			<div class="container">
+				<span class="image"><img src="../assets/images/education/NU.png" alt="东北大学" width="200" height="200"></span>
+				<h2>东北大学</h2>
+				<h3>研究生</h3>
+				<p>计算机科学硕士学位</p>
+				<p>分布式系统、云计算和软件架构的高级课程。</p>
+			</div>
+		</article>
+
+		<article id="wuhan">
+			<div class="container">
+				<span class="image"><img src="../assets/images/education/Wuhan_University_Logo.png" alt="武汉大学" width="200" height="200"></span>
+				<h2>武汉大学</h2>
+				<h3>本科</h3>
+				<p>计算机科学学士学位</p>
+				<p>学习计算机科学基础概念、算法和软件开发。</p>
+			</div>
+		</article>
+
+		<article id="sjtu">
+			<div class="container">
+				<span class="image"><img src="../assets/images/education/Sjtu-logo-standard-red.png" alt="上海交通大学" width="200" height="200"></span>
+				<h2>上海交通大学</h2>
+				<h3>暑期学校</h3>
+				<p>软件工程高级研究</p>
+				<p>参加专注于高级软件工程实践的密集暑期项目。</p>
+			</div>
+		</article>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const backToTop = document.getElementById('backToTop');
+				
+				window.addEventListener('scroll', function() {
+					if (window.pageYOffset > 300) {
+						backToTop.classList.add('show');
+					} else {
+						backToTop.classList.remove('show');
+					}
+				});
+				
+				backToTop.addEventListener('click', function() {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Education | Yanchen Wang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Yanchen Wang - Education Background" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Floating Buttons -->
+		<div class="floating-buttons">
+			<button class="back-to-top" id="backToTop" aria-label="Back to top">
+				<span>TOP</span>
+			</button>
+			<div class="lang-switch">
+				<a href="index.html" class="lang-btn active">EN</a>
+				<a href="index-zh.html" class="lang-btn">CN</a>
+			</div>
+		</div>
+
+		<!--Nav-->
+		<nav id="nav">
+			<ul>
+				<li><a href="../index.html#home"><strong>Home</strong></a></li>
+				<li><a href="../index.html#education"><strong>Education</strong></a></li>
+				<li><a href="../index.html#work"><strong>Work</strong></a></li>
+				<li><a href="../index.html#activity"><strong>Activity</strong></a></li>
+				<li><a href="../index.html#contact"><strong>Contact</strong></a></li>
+			</ul>
+		</nav>
+
+		<!--Education Content-->
+		<article id="home">
+			<div class="container">
+				<h1>Education</h1>
+				<p>My academic journey and educational background.</p>
+			</div>
+		</article>
+
+		<article id="northeastern">
+			<div class="container">
+				<span class="image"><img src="../assets/images/education/NU.png" alt="Northeastern University" width="200" height="200"></span>
+				<h2>Northeastern University</h2>
+				<h3>Graduate</h3>
+				<p>Master's degree in Computer Science</p>
+				<p>Advanced coursework in distributed systems, cloud computing, and software architecture.</p>
+			</div>
+		</article>
+
+		<article id="wuhan">
+			<div class="container">
+				<span class="image"><img src="../assets/images/education/Wuhan_University_Logo.png" alt="Wuhan University" width="200" height="200"></span>
+				<h2>Wuhan University</h2>
+				<h3>Undergraduate</h3>
+				<p>Bachelor's degree in Computer Science</p>
+				<p>Studied fundamental computer science concepts, algorithms, and software development.</p>
+			</div>
+		</article>
+
+		<article id="sjtu">
+			<div class="container">
+				<span class="image"><img src="../assets/images/education/Sjtu-logo-standard-red.png" alt="Shanghai Jiaotong University" width="200" height="200"></span>
+				<h2>Shanghai Jiaotong University</h2>
+				<h3>Summer School</h3>
+				<p>Advanced studies in software engineering</p>
+				<p>Participated in intensive summer program focusing on advanced software engineering practices.</p>
+			</div>
+		</article>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const backToTop = document.getElementById('backToTop');
+				
+				window.addEventListener('scroll', function() {
+					if (window.pageYOffset > 300) {
+						backToTop.classList.add('show');
+					} else {
+						backToTop.classList.remove('show');
+					}
+				});
+				
+				backToTop.addEventListener('click', function() {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>

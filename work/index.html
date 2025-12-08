@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Work Experience | Yanchen Wang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Yanchen Wang - Work Experience" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Floating Buttons -->
+		<div class="floating-buttons">
+			<button class="back-to-top" id="backToTop" aria-label="Back to top">
+				<span>TOP</span>
+			</button>
+			<div class="lang-switch">
+				<a href="index.html" class="lang-btn active">EN</a>
+				<a href="index-zh.html" class="lang-btn">CN</a>
+			</div>
+		</div>
+
+		<!--Nav-->
+		<nav id="nav">
+			<ul>
+				<li><a href="../index.html#home"><strong>Home</strong></a></li>
+				<li><a href="../index.html#education"><strong>Education</strong></a></li>
+				<li><a href="../index.html#work"><strong>Work</strong></a></li>
+				<li><a href="../index.html#activity"><strong>Activity</strong></a></li>
+				<li><a href="../index.html#contact"><strong>Contact</strong></a></li>
+			</ul>
+		</nav>
+
+		<!--Work Content-->
+		<article id="home">
+			<div class="container">
+				<h1>Work Experience</h1>
+				<p>My professional journey in software development and education.</p>
+			</div>
+		</article>
+
+		<article id="amazon">
+			<div class="container">
+				<div class="logo-container">
+					<img src="../assets/images/work/31epF-8N9LL.png" alt="Amazon">
+				</div>
+				<h2>Amazon</h2>
+				<h3>Software Development Engineer</h3>
+				<p>Working on cloud infrastructure and distributed systems at one of the world's leading technology companies.</p>
+				<p>Responsibilities include designing scalable solutions, implementing microservices, and optimizing system performance.</p>
+			</div>
+		</article>
+
+		<article id="xcerra">
+			<div class="container">
+				<div class="logo-container">
+					<img src="../assets/images/work/xcerra.png" alt="Xcerra">
+				</div>
+				<h2>Xcerra</h2>
+				<h3>Software Engineer</h3>
+				<p>Developed comprehensive testing solutions for the semiconductor industry.</p>
+				<p>Focused on creating automated test systems and improving manufacturing efficiency through software innovation.</p>
+			</div>
+		</article>
+
+		<article id="neworiental">
+			<div class="container">
+				<div class="logo-container">
+					<img src="../assets/images/work/New_Oriental.png" alt="New Oriental">
+				</div>
+				<h2>New Oriental</h2>
+				<h3>English Teacher</h3>
+				<p>Taught English language courses to students, helping them improve their language skills and prepare for international exams.</p>
+				<p>Developed engaging curriculum and fostered a positive learning environment for diverse student groups.</p>
+			</div>
+		</article>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const backToTop = document.getElementById('backToTop');
+				
+				window.addEventListener('scroll', function() {
+					if (window.pageYOffset > 300) {
+						backToTop.classList.add('show');
+					} else {
+						backToTop.classList.remove('show');
+					}
+				});
+				
+				backToTop.addEventListener('click', function() {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>

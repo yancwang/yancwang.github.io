@@ -231,7 +231,7 @@ ol, ul {
 
 
 /* Full Page Sections */
-#home, #education, #work, #activity, #contact {
+#home, #education, #work, #activity, #contact, #amazon, #xcerra, #neworiental, #wuhan, #sjtu, #northeastern {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
