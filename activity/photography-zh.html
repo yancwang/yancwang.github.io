@@ -10,6 +10,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="王沿辰 - 摄影作品集" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/gallery.css" />
+		<style>
+			/* Override full-page sections for photography page */
+			html {
+				scroll-snap-type: none;
+			}
+			#home {
+				min-height: auto;
+				padding: 8rem 2rem 3rem 2rem;
+			}
+		</style>
 	</head>
 	<body>
 
@@ -40,68 +51,80 @@
 				<div class="container">
 					<h1>摄影</h1>
 					<p>欢迎来到我的摄影作品集。在这里我分享我对捕捉瞬间和通过图像讲述故事的热情。</p>
-					<p><a href="#education" style="color: #1565c0; text-decoration: none; font-weight: 600; font-size: 1.1rem;">查看作品集 →</a></p>
 				</div>
 			</article>
 
-			<article id="education">
-				<div class="container">
-					<h2>作品集</h2>
-					<div class="row">
-						<section class="box">
-							<a href="landscape.html" style="text-decoration: none; color: inherit; display: block;">
-								<h3><strong>风景</strong></h3>
-								<p>自然与风景摄影</p>
-							</a>
-						</section>
-						<section class="box">
-							<h3><strong>人像</strong></h3>
-							<p>人物与生活方式摄影</p>
-						</section>
-						<section class="box">
-							<h3><strong>街拍</strong></h3>
-							<p>城市与抓拍摄影</p>
-						</section>
+			<!--Photo Gallery-->
+			<section class="gallery-section">
+				<div class="gallery-container">
+					<div class="gallery-grid">
+						<div class="gallery-item" data-full="../assets/images/activity/photography/DSC06577-1.jpg" data-title="西雅图日落" data-info="西雅图 • 2025">
+							<img src="../assets/images/activity/photography/DSC06577-1.jpg" alt="风景">
+							<div class="gallery-overlay">
+								<div>
+									<h3>西雅图日落</h3>
+								</div>
+								<div class="gallery-stats">
+									<p>西雅图 • 2025</p>
+								</div>
+							</div>
+						</div>
+						<div class="gallery-item" data-full="../assets/images/activity/photography/DSC_0295_D-1.jpg" data-title="西雅图市中心" data-info="西雅图 • 2025">
+							<img src="../assets/images/activity/photography/DSC_0295_D-1.jpg" alt="风景">
+							<div class="gallery-overlay">
+								<div>
+									<h3>西雅图市中心</h3>
+								</div>
+								<div class="gallery-stats">
+									<p>西雅图 • 2025</p>
+								</div>
+							</div>
+						</div>
+						<div class="gallery-item" data-full="../assets/images/activity/photography/DSC_0192-1.jpg" data-title="西雅图日落 - 太空针塔" data-info="西雅图 • 2025">
+							<img src="../assets/images/activity/photography/DSC_0192-1.jpg" alt="风景">
+							<div class="gallery-overlay">
+								<div>
+									<h3>西雅图日落 - 太空针塔</h3>
+								</div>
+								<div class="gallery-stats">
+									<p>西雅图 • 2025</p>
+								</div>
+							</div>
+						</div>
+						<div class="gallery-item" data-full="../assets/images/activity/photography/IMG_2964-1.jpg" data-title="西雅图彩虹" data-info="西雅图 • 2025">
+							<img src="../assets/images/activity/photography/IMG_2964-1.jpg" alt="风景">
+							<div class="gallery-overlay">
+								<div>
+									<h3>西雅图彩虹</h3>
+								</div>
+								<div class="gallery-stats">
+									<p>西雅图 • 2025</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</article>
+			</section>
+
+			<!-- Lightbox Modal -->
+			<div class="lightbox" id="lightbox">
+				<button class="lightbox-close" id="lightbox-close">&times;</button>
+				<button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
+				<button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
+				<div class="lightbox-content">
+					<img class="lightbox-image" id="lightbox-image" src="" alt="">
+					<div class="lightbox-info">
+						<h3 id="lightbox-title"></h3>
+						<p id="lightbox-info"></p>
+					</div>
+				</div>
+			</div>
 
 		<script>
-			// Dropdown menu toggle
 			document.addEventListener('DOMContentLoaded', function() {
-				const dropdowns = document.querySelectorAll('.dropdown');
-				
-				dropdowns.forEach(dropdown => {
-					const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-					const dropdownLink = dropdown.querySelector('a');
-					
-					dropdownLink.addEventListener('click', function(e) {
-						e.preventDefault();
-						
-						// Close other dropdowns
-						dropdowns.forEach(other => {
-							if (other !== dropdown) {
-								other.querySelector('.dropdown-menu').classList.remove('show');
-							}
-						});
-						
-						dropdownMenu.classList.toggle('show');
-					});
-				});
-				
-				// Close dropdown when clicking outside
-				document.addEventListener('click', function(e) {
-					if (!e.target.closest('.dropdown')) {
-						dropdowns.forEach(dropdown => {
-							dropdown.querySelector('.dropdown-menu').classList.remove('show');
-						});
-					}
-				});
-				
 				// Back to top button
 				const backToTop = document.getElementById('backToTop');
 				
-				// Show/hide button based on scroll position
 				window.addEventListener('scroll', function() {
 					if (window.pageYOffset > 300) {
 						backToTop.classList.add('show');
@@ -110,12 +133,77 @@
 					}
 				});
 				
-				// Scroll to top when clicked
 				backToTop.addEventListener('click', function() {
 					window.scrollTo({
 						top: 0,
 						behavior: 'smooth'
 					});
+				});
+
+				// Setup gallery items
+				const galleryItems = document.querySelectorAll('.gallery-item');
+				galleryItems.forEach((item, index) => {
+					item.addEventListener('click', function() {
+						openLightbox(index);
+					});
+				});
+
+				// Lightbox functionality
+				const lightbox = document.getElementById('lightbox');
+				const lightboxImage = document.getElementById('lightbox-image');
+				const lightboxTitle = document.getElementById('lightbox-title');
+				const lightboxInfo = document.getElementById('lightbox-info');
+				const lightboxClose = document.getElementById('lightbox-close');
+				const lightboxPrev = document.getElementById('lightbox-prev');
+				const lightboxNext = document.getElementById('lightbox-next');
+				let currentIndex = 0;
+
+				function openLightbox(index) {
+					currentIndex = index;
+					const item = galleryItems[index];
+					const fullImageUrl = item.getAttribute('data-full');
+					const title = item.getAttribute('data-title');
+					const info = item.getAttribute('data-info');
+
+					lightboxImage.src = fullImageUrl;
+					lightboxTitle.textContent = title;
+					lightboxInfo.textContent = info;
+					lightbox.classList.add('active');
+					document.body.style.overflow = 'hidden';
+				}
+
+				function closeLightbox() {
+					lightbox.classList.remove('active');
+					document.body.style.overflow = '';
+				}
+
+				function showPrevious() {
+					currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+					openLightbox(currentIndex);
+				}
+
+				function showNext() {
+					currentIndex = (currentIndex + 1) % galleryItems.length;
+					openLightbox(currentIndex);
+				}
+
+				lightboxClose.addEventListener('click', closeLightbox);
+				lightboxPrev.addEventListener('click', showPrevious);
+				lightboxNext.addEventListener('click', showNext);
+
+				lightbox.addEventListener('click', function(e) {
+					if (e.target === lightbox) {
+						closeLightbox();
+					}
+				});
+
+				// Keyboard navigation
+				document.addEventListener('keydown', function(e) {
+					if (!lightbox.classList.contains('active')) return;
+					
+					if (e.key === 'Escape') closeLightbox();
+					if (e.key === 'ArrowLeft') showPrevious();
+					if (e.key === 'ArrowRight') showNext();
 				});
 			});
 		</script>
