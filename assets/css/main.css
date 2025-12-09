@@ -488,8 +488,9 @@ article {
 
 /* Contact Box - Button Style */
 .contact-box {
-	min-width: 200px;
-	padding: 1.5rem 3rem;
+	width: 280px;
+	height: 70px;
+	padding: 0 2rem;
 	background: linear-gradient(135deg, rgba(21, 101, 192, 0.8), rgba(100, 181, 246, 0.8));
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -497,7 +498,7 @@ article {
 	border-radius: 50px;
 	box-shadow: 
 		0 8px 25px rgba(21, 101, 192, 0.3),
-		inset 0 1px 0 rgba(255, 255, 255, 0.5);
+		inset 0 1px 0 rgba(255, 255, 0.5);
 	text-align: center;
 	margin: 1rem;
 	display: inline-flex;
@@ -544,8 +545,8 @@ article {
 
 .contact-box h3 {
 	color: #ffffff;
-	font-size: 1.1rem;
-	line-height: 1.4;
+	font-size: 0.95rem;
+	line-height: 1.2;
 	font-family: 'JetBrains Mono', monospace;
 	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 	margin: 0;
@@ -554,6 +555,9 @@ article {
 	letter-spacing: 0.5px;
 	position: relative;
 	z-index: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .contact-box h3 strong {
@@ -601,7 +605,7 @@ article {
 	align-items: center;
 	justify-content: center;
 	gap: 1.5rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 .school-header .logo-container {
@@ -614,6 +618,258 @@ article {
 .school-header h2 {
 	margin: 0;
 	text-align: left;
+}
+
+/* Timeline Pattern */
+.timeline-item {
+	display: flex;
+	gap: 3rem;
+	align-items: flex-start;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.timeline-date {
+	flex-shrink: 0;
+	width: 150px;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #61666d;
+	text-align: right;
+	padding-top: 0.5rem;
+}
+
+.timeline-content {
+	flex: 1;
+	text-align: left;
+}
+
+.timeline-content h3 {
+	font-size: 1.1rem;
+	margin-bottom: 1rem;
+	color: #1a237e;
+}
+
+.timeline-content p {
+	font-size: 1rem;
+	line-height: 1.8;
+	color: #1a237e;
+	margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.timeline-item {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	
+	.timeline-date {
+		width: 100%;
+		text-align: left;
+		padding-top: 0;
+	}
+}
+
+/* Education Card Pattern - Clean Layout without borders */
+.education-card {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.card-content {
+	display: flex;
+	gap: 6rem;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.card-left {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	flex: 1;
+	justify-content: flex-start;
+	text-align: center;
+}
+
+.card-left .logo-container {
+	width: 120px;
+	height: 120px;
+	margin: 0;
+}
+
+/* Work pages - bigger company logos */
+#amazon .card-left .logo-container,
+#xcerra .card-left .logo-container,
+#neworiental .card-left .logo-container {
+	width: 180px;
+	height: 180px;
+}
+
+.card-left h2 {
+	margin: 0;
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+.card-left h2::after {
+	display: none;
+}
+
+.card-right {
+	flex: 1;
+	text-align: left;
+}
+
+.card-right h3 {
+	font-size: 1.3rem;
+	color: #1565c0;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.card-right ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.card-right li {
+	font-size: 1rem;
+	line-height: 1.8;
+	color: #1a237e;
+	margin-bottom: 0.5rem;
+	padding-left: 1.8rem;
+	position: relative;
+}
+
+.card-right > ul > li::before {
+	content: '📚';
+	position: absolute;
+	left: 0;
+	font-size: 0.9rem;
+}
+
+/* Work pages - different emoji */
+#amazon .card-right > ul > li::before,
+#xcerra .card-right > ul > li::before,
+#neworiental .card-right > ul > li::before {
+	content: '▸';
+	color: #1565c0;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.projects h4 {
+	font-size: 1.1rem;
+	color: #1565c0;
+	margin-bottom: 0.75rem;
+	font-weight: 600;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+.projects ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.projects li {
+	font-size: 1rem;
+	line-height: 1.8;
+	color: #1a237e;
+	margin-bottom: 0.5rem;
+	padding-left: 1.8rem;
+	position: relative;
+}
+
+.projects li::before {
+	content: '💼';
+	position: absolute;
+	left: 0;
+	font-size: 0.9rem;
+}
+
+.achievements {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(21, 101, 192, 0.2);
+}
+
+.achievements h4 {
+	font-size: 1.1rem;
+	color: #1565c0;
+	margin-bottom: 0.75rem;
+	font-weight: 600;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+.achievements ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.achievements li {
+	font-size: 0.95rem;
+	line-height: 1.8;
+	color: #1a237e;
+	margin-bottom: 0.5rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.achievements li::before {
+	content: '🏆';
+	position: absolute;
+	left: 0;
+	font-size: 0.9rem;
+}
+
+.card-timeline {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #1565c0;
+	text-align: center;
+	padding-top: 1.5rem;
+	position: relative;
+}
+
+.card-timeline::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #1565c0, transparent);
+}
+
+@media screen and (max-width: 768px) {
+	.card-content {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	
+	.card-left {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+	}
+	
+	.card-left h2 {
+		text-align: center;
+	}
+	
+	.card-right {
+		text-align: left;
+	}
 }
 
 /* Work section spacing */
