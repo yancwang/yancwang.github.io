@@ -871,6 +871,8 @@ article {
 	.card-content {
 		flex-direction: column;
 		gap: 1.5rem;
+		align-items: center;
+		text-align: center;
 	}
 	
 	.card-left {
@@ -885,7 +887,41 @@ article {
 	}
 	
 	.card-right {
+		text-align: center;
+		align-items: center;
+	}
+	
+	.card-right h3 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	
+	.card-right ul {
 		text-align: left;
+		padding-left: 1.5rem;
+	}
+	
+	.card-right li {
+		text-align: left;
+		padding-left: 1.8rem;
+	}
+	
+	.achievements {
+		text-align: center;
+	}
+	
+	.achievements h4 {
+		text-align: center;
+	}
+	
+	.achievements ul {
+		text-align: left;
+		padding-left: 1.5rem;
+	}
+	
+	.achievements li {
+		text-align: left;
+		padding-left: 1.5rem;
 	}
 }
 
