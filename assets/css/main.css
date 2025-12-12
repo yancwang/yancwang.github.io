@@ -1107,6 +1107,16 @@ article {
 		margin: auto 1.5rem auto 0 !important;
 	}
 	
+	/* Mobile order - Education: Graduate first, then Undergraduate, then Summer School */
+	#education .box:nth-child(1) { order: 2; } /* Undergraduate (Wuhan) -> 2nd */
+	#education .box:nth-child(2) { order: 3; } /* Summer School (SJTU) -> 3rd */
+	#education .box:nth-child(3) { order: 1; } /* Graduate (Northeastern) -> 1st */
+	
+	/* Mobile order - Work: Amazon first, then Xcerra, then New Oriental */
+	#work .box:nth-child(1) { order: 3; } /* New Oriental -> 3rd */
+	#work .box:nth-child(2) { order: 2; } /* Xcerra -> 2nd */
+	#work .box:nth-child(3) { order: 1; } /* Amazon -> 1st */
+	
 	.box h3 {
 		font-size: 1rem;
 		line-height: 1.3;
